@@ -1,9 +1,0 @@
-predictor,chisq,df,p_value
-age,0.2942,1,0.588
-sex,0.1189,1,0.730
-anaemia,0.0114,1,0.915
-diabetes,0.1064,1,0.744
-ejection_fraction,4.0859,1,0.043
-serum_creatinine,1.2432,1,0.265
-serum_sodium,0.1250,1,0.724
-GLOBAL,7.8406,7,0.347

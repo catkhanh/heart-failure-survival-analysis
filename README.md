@@ -63,21 +63,6 @@ Continuous characteristics are reported as median (Q1, Q3); categorical characte
 
 The apparent concordance of the Cox model was 0.727. This is not external validation and should not be presented as expected performance in a new population.
 
-## Reproduce
-
-Open R in this folder and run:
-
-```r
-source("heart_failure.R")
-```
-
-Required packages:
-
-```r
-install.packages(c("gtsummary", "survival"))
-```
-
-The script saves descriptive tables in `outputs/` and displays the Kaplan-Meier curve in RStudio. It does not require `survminer`.
 
 ## Project Structure
 

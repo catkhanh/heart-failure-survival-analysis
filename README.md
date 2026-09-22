@@ -20,8 +20,6 @@ The file `df.csv` is the analysis dataset. Variable definitions are available on
 4. Fit an adjusted Cox proportional-hazards model with age, sex, anaemia, diabetes, ejection fraction, serum creatinine, and serum sodium.
 5. Check the proportional-hazards assumption using Schoenfeld residuals.
 
-This is a **prognostic association** analysis. It does not estimate causal effects of treatment or disease characteristics.
-
 ## Preliminary Results
 
 The current run included 299 patients and 96 recorded deaths.

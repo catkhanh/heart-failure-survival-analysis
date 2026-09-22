@@ -14,15 +14,31 @@ The file `df.csv` is the analysis dataset. Variable definitions are available on
 
 ## Methods
 
-1. Audit missing data and produce descriptive summaries.
-2. Draw histograms for the continuous predictors used in the main model.
+1. Create a baseline Table 1 with `gtsummary`.
+2. Review simple histograms of baseline continuous variables before choosing descriptive summaries.
 3. Estimate overall survival with Kaplan-Meier, treating patients without a recorded death as right-censored at their observed follow-up time.
 4. Fit an adjusted Cox proportional-hazards model with age, sex, anaemia, diabetes, ejection fraction, serum creatinine, and serum sodium.
-5. Check the proportional-hazards assumption using Schoenfeld residuals.
+
+This is a **prognostic association** analysis. It does not estimate causal effects of treatment or disease characteristics.
 
 ## Preliminary Results
 
 The current run included 299 patients and 96 recorded deaths.
+
+### Baseline characteristics
+
+| Characteristic | Summary |
+| --- | ---: |
+| Age, years | 60 (51, 70) |
+| Female | 105 (35%) |
+| Male | 194 (65%) |
+| Anaemia | 129 (43%) |
+| Diabetes | 125 (42%) |
+| Ejection fraction, % | 38 (30, 45) |
+| Serum creatinine | 1.10 (0.90, 1.40) |
+| Serum sodium | 137 (134, 140) |
+
+Continuous characteristics are reported as median (Q1, Q3); categorical characteristics are reported as n (%). Median follow-up was 115 days (IQR 73 to 203).
 
 ### Kaplan-Meier survival
 
@@ -47,8 +63,6 @@ The current run included 299 patients and 96 recorded deaths.
 
 The apparent concordance of the Cox model was 0.727. This is not external validation and should not be presented as expected performance in a new population.
 
-The global proportional-hazards test was not statistically significant (p = 0.347), but ejection fraction had an individual test p-value of 0.043. Its diagnostic plot should therefore be inspected before treating the simple Cox model as final.
-
 ## Reproduce
 
 Open R in this folder and run:
@@ -60,10 +74,10 @@ source("heart_failure.R")
 Required packages:
 
 ```r
-install.packages(c("ggplot2", "survival"))
+install.packages(c("gtsummary", "survival"))
 ```
 
-The script creates tables and figures in `outputs/`. It does not require `survminer` or `gtsummary`.
+The script saves descriptive tables in `outputs/` and displays the Kaplan-Meier curve in RStudio. It does not require `survminer`.
 
 ## Project Structure
 
